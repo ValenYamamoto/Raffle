@@ -7,7 +7,7 @@ file.close()
 file = open("hypo.csv", mode='a', newline='')
 entries = {}
 numbers = {}
-winners = []
+prizeWinners = []
 
 print("OPEN")
 
@@ -20,37 +20,33 @@ def readFile():
     for row in csv.reader(f):
         #self.entries[row[0]] = row[1]
         if(len(row) > 0):
-            if(row[0] not in entries):
-                entries[row[0]] = int(row[1])
-            else:
-                entries[row[0]] = entries[row[0]] + int(row[1])
+            entries[row[0]] = row[1:]
 
 def getWinners():
     readFile()
-    weight = []
-    
-    for i in list(entries.values()):
-        weight.append(int(i))
 
-    while len(winners) < 10:
-        randomVal = random.choices(list(entries), weights=weight, k=1)
-        if randomVal[0] not in winners:
-            winners.append(randomVal[0])
+    for prize in range(len(entries["1"])-1):
+        winners = 0
 
-    for num in winners:
-        num = int(num)
-        numbers[num] = numbers[num]+1
+        while winners < 10:
+            weight = []
+            for i in list(entries.values()):
+                weight.append(int(i[prize]))
+            randomVal = random.choices(list(entries), weights=weight, k=1)
+            if randomVal[0] not in prizeWinners:
+                prizeWinners.append(randomVal[0])
+                entries.pop(randomVal[0])
+                winners = winners + 1
 
     
 
 
 
 getWinners()
-    
-for key in winners:
-    print(str(key))
-    #writer = csv.writer(file)
-    #writer.writerow((key, val))
+for key in prizeWinners:
+    #print(str(key))
+    writer = csv.writer(file)
+    writer.writerow((key, 0))
 file.close()
 print("Done")
 

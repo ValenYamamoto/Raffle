@@ -4,6 +4,8 @@ import random as random
 
 class Window(Frame):
 
+    raffles = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
@@ -36,6 +38,9 @@ class Window(Frame):
 
         Label(self, text="# of entries:").grid(row=1, column=0)
 
+        catText = StringVar()
+        cat = OptionMenu(self, textvariable=catText, raffles).place(x=100, y=0)
+
         self.info = StringVar()
         self.infoLabel = Label(self, textvariable=self.info).place(x=0, y=200)
 
@@ -49,7 +54,7 @@ class Window(Frame):
         #quitButton = Button(self, text="Quit", command=self.client_exit)
         #quitButton.place(x=0, y=0)
 
-        getButton = Button(self, text="Get", command=self.get_input)
+        getButton = Button(self, text="Submit", command=self.get_input)
         getButton.grid(row=2)
 
         readButton = Button(self, text="Read", command=self.readFile)
