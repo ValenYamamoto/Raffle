@@ -7,6 +7,10 @@ file.close()
 file = open("hypo.csv", mode='a', newline='')
 entries = {}
 numbers = {}
+winners = []
+
+print("OPEN")
+
 for i in range(1, 101):
     numbers[i] = 0
 
@@ -27,10 +31,13 @@ def getWinners():
     
     for i in list(entries.values()):
         weight.append(int(i))
-        
-    randomVal = random.choices(list(entries), weights=weight, k=10)
 
-    for num in randomVal:
+    while len(winners) < 10:
+        randomVal = random.choices(list(entries), weights=weight, k=1)
+        if randomVal[0] not in winners:
+            winners.append(randomVal[0])
+
+    for num in winners:
         num = int(num)
         numbers[num] = numbers[num]+1
 
@@ -38,11 +45,12 @@ def getWinners():
 
 
 
-for i in range(1000):
-    getWinners()
+getWinners()
     
-for key,val in numbers.items():
-        writer = csv.writer(file)
-        writer.writerow((key, val))
+for key in winners:
+    print(str(key))
+    #writer = csv.writer(file)
+    #writer.writerow((key, val))
 file.close()
+print("Done")
 
