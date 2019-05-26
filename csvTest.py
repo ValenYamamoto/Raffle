@@ -1,21 +1,21 @@
 import csv as csv
 import random as random
 
-file = open("test2.csv", "w+")
+file = open("RaffleWinners.csv", "w+")
 file.close()
 
-file = open("test2.csv", mode='a', newline='')
+file = open("RaffleWinners.csv", mode='a', newline='')
 entries = {}
 numbers = {}
 prizeNumbers = []
 prizeNames = []
 prizeWinners = {}
-maxWins = 2
+maxWins = 3
 
 print("OPEN")
 
 def readFile():
-    f = open("test.csv", mode='r', newline="")
+    f = open("RaffleData.csv", mode='r', newline="")
     
     for row in csv.reader(f):
         if(row[0] == "# of Prizes"):
