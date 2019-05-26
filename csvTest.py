@@ -56,10 +56,9 @@ def getWinners():
 
 getWinners()
 for key, val in prizeWinners.items():
-    #print(str(key))
     writer = csv.writer(file)
     writer.writerow((key, val))
 file.close()
-print(pri
+
 print("Done")
 
