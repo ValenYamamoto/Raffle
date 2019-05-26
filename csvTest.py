@@ -8,6 +8,7 @@ file = open("test2.csv", mode='a', newline='')
 entries = {}
 numbers = {}
 prizeNumbers = []
+prizeNames = []
 prizeWinners = []
 
 print("OPEN")
@@ -19,8 +20,10 @@ def readFile():
         if(row[0] == "# of Prizes"):
             prizeNumbers.append(row[1:])
         
-        elif(row[0] != "Name"):
-            #self.entries[row[0]] = row[1]
+        elif(row[0] == "Name"):
+             prizeNames.append(row[1:])
+
+        else:
             if(len(row) > 0):
                 entries[row[0]] = row[1:]
 
@@ -37,7 +40,7 @@ def getWinners():
                 weight.append(int(i[prize]))
             randomVal = random.choices(list(entries), weights=weight, k=1)
             if randomVal[0] not in prizeWinners:
-                prizeWinners.append([randomVal[0], prize])
+                prizeWinners.append([randomVal[0], prizeNames[0][prize]])
                 entries.pop(randomVal[0])
                 winners = winners + 1
 
