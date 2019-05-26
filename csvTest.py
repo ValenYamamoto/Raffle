@@ -10,7 +10,7 @@ numbers = {}
 prizeNumbers = []
 prizeNames = []
 prizeWinners = {}
-maxWins = 3
+maxWins = 1
 
 print("OPEN")
 
@@ -60,5 +60,6 @@ for key, val in prizeWinners.items():
     writer = csv.writer(file)
     writer.writerow((key, val))
 file.close()
+print(pri
 print("Done")
 
