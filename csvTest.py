@@ -15,7 +15,7 @@ maxWins = 2
 print("OPEN")
 
 def readFile():
-    f = open("Raffle Data.csv", mode='r', newline="")
+    f = open("test.csv", mode='r', newline="")
     
     for row in csv.reader(f):
         if(row[0] == "# of Prizes"):
@@ -45,10 +45,11 @@ def getWinners():
                 #entries.pop(randomVal[0])
                 winners = winners + 1
             elif len(prizeWinners[randomVal[0]]) < maxWins:
-                prizeWinners[randomVal[0]].append(prizeNames[0][prize])
-                winners = winners + 1
-                if len(prizeWinners[randomVal[0]]) >= maxWins:
-                    entries.pop(randomVal[0])
+                if prizeNames[0][prize] not in prizeWinners[randomVal[0]]:
+                    prizeWinners[randomVal[0]].append(prizeNames[0][prize])
+                    winners = winners + 1
+                    if len(prizeWinners[randomVal[0]]) >= maxWins:
+                        entries.pop(randomVal[0])
     
 
 
