@@ -9,7 +9,8 @@ entries = {}
 numbers = {}
 prizeNumbers = []
 prizeNames = []
-prizeWinners = []
+prizeWinners = {}
+maxWins = 2
 
 print("OPEN")
 
@@ -40,19 +41,23 @@ def getWinners():
                 weight.append(int(i[prize]))
             randomVal = random.choices(list(entries), weights=weight, k=1)
             if randomVal[0] not in prizeWinners:
-                prizeWinners.append([randomVal[0], prizeNames[0][prize]])
-                entries.pop(randomVal[0])
+                prizeWinners[randomVal[0]] = [prizeNames[0][prize]]
+                #entries.pop(randomVal[0])
                 winners = winners + 1
-
+            elif len(prizeWinners[randomVal[0]]) < maxWins:
+                prizeWinners[randomVal[0]].append(prizeNames[0][prize])
+                winners = winners + 1
+                if len(prizeWinners[randomVal[0]]) >= maxWins:
+                    entries.pop(randomVal[0])
     
 
 
 
 getWinners()
-for key in prizeWinners:
+for key, val in prizeWinners.items():
     #print(str(key))
     writer = csv.writer(file)
-    writer.writerow((key[0], key[1]))
+    writer.writerow((key, val))
 file.close()
 print("Done")
 
