@@ -1,6 +1,9 @@
 import csv as csv
 import random as random
 
+fileName = input("What is the file name?") + ".csv"
+print(fileName)
+
 file = open("RaffleWinners.csv", "w+")
 file.close()
 
@@ -16,26 +19,33 @@ print("OPEN")
 def readFile():
     global prizeNumbers
     global prizeNames
-    f = open("RaffleData.csv", mode='r', newline="")
+    global entries
+    f = open(fileName, mode='r', newline="")
 
     for row in csv.reader(f):
-        if(row[0] == "# of Prizes"):
-            global.prizeNumbers = row[1:]
+        if(row[3] == "# of Prizes"):
+            prizeNumbers = row[4:18]
+            #print(prizeNumbers)
         
-        elif(row[0] == "Name"):
-            global.prizeNames = row[1:]
+        elif(row[0] == "Complete Name"):
+            prizeNames = row[4:18]
+            #print(prizeNames)
 
         else:
-            if(len(row) > 0):
-                entries[row[0]] = row[1:]
+            if(row[0][0] != " "):
+                entries[row[0]] = row[4:18]
+"""
+    for key, value in entries.items():
+        print(key + " " + str(value) + " \n")
+"""     
 
 
 def getWinners():
     readFile()
-
     for prize in range(len(prizeNumbers)):
         winners = 0
         while winners < int(prizeNumbers[prize]):
+            #print(int(prizeNumbers[prize]))
             weight = []
             for i in list(entries.values()):
                 weight.append(int(i[prize]))
@@ -56,6 +66,8 @@ getWinners()
 for name, prizeList in prizeWinners.items():
     writer = csv.writer(file)
     writer.writerow((name, prizeList))
+
+    
 for prize in prizeNames:
     print()
     print(prize)
