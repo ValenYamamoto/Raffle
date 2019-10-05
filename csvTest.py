@@ -24,20 +24,20 @@ def readFile():
 
     for row in csv.reader(f):
         if(row[3] == "# of Prizes"):
-            prizeNumbers = row[4:18]
+            prizeNumbers = row[4:-1]
             #print(prizeNumbers)
         
         elif(row[0] == "Complete Name"):
-            prizeNames = row[4:18]
-            #print(prizeNames)
+            prizeNames = row[4:-1]
+            print(prizeNames)
 
         else:
             if(row[0][0] != " "):
-                entries[row[0]] = row[4:18]
-"""
+                entries[row[0]] = row[4:-1]
+
     for key, value in entries.items():
         print(key + " " + str(value) + " \n")
-"""     
+
 
 
 def getWinners():

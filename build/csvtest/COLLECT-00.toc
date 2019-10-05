@@ -1,0 +1,59 @@
+([('csvtest.exe',
+   'C:\\Users\\Valen Yamamoto\\Documents\\Raffle\\build\\csvtest\\csvtest.exe',
+   'EXECUTABLE'),
+  ('csvtest.exe.manifest',
+   'C:\\Users\\Valen '
+   'Yamamoto\\Documents\\Raffle\\build\\csvtest\\csvtest.exe.manifest',
+   'BINARY'),
+  ('python37.dll',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\python37.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('_ssl',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('pyexpat',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('unicodedata',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_hashlib',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_bz2',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('_lzma',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_socket',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('select',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('libssl-1_1.dll',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('libcrypto-1_1.dll',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('base_library.zip',
+   'C:\\Users\\Valen '
+   'Yamamoto\\Documents\\Raffle\\build\\csvtest\\base_library.zip',
+   'DATA')],)

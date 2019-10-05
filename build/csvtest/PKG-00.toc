@@ -1,0 +1,41 @@
+('C:\\Users\\Valen Yamamoto\\Documents\\Raffle\\build\\csvtest\\PKG-00.pkg',
+ {'BINARY': 1,
+  'DATA': 1,
+  'EXECUTABLE': 1,
+  'EXTENSION': 1,
+  'PYMODULE': 1,
+  'PYSOURCE': 1,
+  'PYZ': 0},
+ [('PYZ-00.pyz',
+   'C:\\Users\\Valen Yamamoto\\Documents\\Raffle\\build\\csvtest\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_os_path',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\PyInstaller\\loader\\pyimod01_os_path.pyc',
+   'PYMODULE'),
+  ('pyimod02_archive',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\PyInstaller\\loader\\pyimod02_archive.pyc',
+   'PYMODULE'),
+  ('pyimod03_importers',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\PyInstaller\\loader\\pyimod03_importers.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\Valen '
+   'Yamamoto\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('csvtest',
+   'C:\\Users\\Valen Yamamoto\\Documents\\Raffle\\csvtest.py',
+   'PYSOURCE'),
+  ('csvtest.exe.manifest',
+   'C:\\Users\\Valen '
+   'Yamamoto\\Documents\\Raffle\\build\\csvtest\\csvtest.exe.manifest',
+   'BINARY')],
+ True,
+ False,
+ False)
