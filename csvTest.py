@@ -1,35 +1,35 @@
 import csv as csv
 import random as random
 
-fileName = input("What is the file name?") + ".csv"
-print(fileName)
+file_name = input("What is the file name?") + ".csv"
+print(file_name)
 
 file = open("RaffleWinners.csv", "w+")
 file.close()
 
 file = open("RaffleWinners.csv", mode='a', newline='')
 entries = {}
-prizeNumbers = []
-prizeNames = []
-prizeWinners = {}
-maxWins = 1
+prize_numbers = []
+prize_names = []
+prize_winners = {}
+max_wins = 1
 
 print("OPEN")
 
-def readFile():
-    global prizeNumbers
-    global prizeNames
+def read_file():
+    global prize_numbers
+    global prize_names
     global entries
-    f = open(fileName, mode='r', newline="")
+    f = open(file_name, mode='r', newline="")
 
     for row in csv.reader(f):
         if(row[3] == "# of Prizes"):
-            prizeNumbers = row[4:-1]
-            #print(prizeNumbers)
+            prize_numbers = row[4:-1]
+            #print(prize_numbers)
         
         elif(row[0] == "Complete Name"):
-            prizeNames = row[4:-1]
-            print(prizeNames)
+            prize_names = row[4:-1]
+            #print(prize_names)
 
         else:
             if(row[0][0] != " "):
@@ -40,39 +40,39 @@ def readFile():
 
 
 
-def getWinners():
-    readFile()
-    for prize in range(len(prizeNumbers)):
+def get_winners():
+    read_file()
+    for prize in range(len(prize_numbers)):
         winners = 0
-        while winners < int(prizeNumbers[prize]):
-            #print(int(prizeNumbers[prize]))
+        while winners < int(prize_numbers[prize]):
+            #print(int(prize_numbers[prize]))
             weight = []
             for i in list(entries.values()):
                 weight.append(int(i[prize]))
-            randomVal = random.choices(list(entries), weights=weight, k=1)
-            if randomVal[0] not in prizeWinners:
-                prizeWinners[randomVal[0]] = [prizeNames[prize]]
-                #entries.pop(randomVal[0])
+            random_val = random.choices(list(entries), weights=weight, k=1)
+            if random_val[0] not in prize_winners:
+                prize_winners[random_val[0]] = [prize_names[prize]]
+                #entries.pop(random_val[0])
                 winners = winners + 1
-            elif len(prizeWinners[randomVal[0]]) < maxWins:
-                if prizeNames[prize] not in prizeWinners[randomVal[0]]:
-                    prizeWinners[randomVal[0]].append(prizeNames[prize])
+            elif len(prize_winners[random_val[0]]) < max_wins:
+                if prize_names[prize] not in prize_winners[random_val[0]]:
+                    prize_winners[random_val[0]].append(prize_names[prize])
                     winners = winners + 1
-                    if len(prizeWinners[randomVal[0]]) >= maxWins:
-                        entries.pop(randomVal[0])
+                    if len(prize_winners[random_val[0]]) >= max_wins:
+                        entries.pop(random_val[0])
     
 
-getWinners()
-for name, prizeList in prizeWinners.items():
+get_winners()
+for name, prize_list in prize_winners.items():
     writer = csv.writer(file)
-    writer.writerow((name, prizeList))
+    writer.writerow((name, prize_list))
 
     
-for prize in prizeNames:
+for prize in prize_names:
     print()
     print(prize)
-    for name, prizeList in prizeWinners.items():
-        if prize in prizeList:
+    for name, prize_list in prize_winners.items():
+        if prize in prize_list:
             print(name)
 
 file.close()
